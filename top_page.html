@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レスポンシブWebサイト</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .left, .center, .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .left {
+            background-color: #ffffff;
+            width: 38%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+        }
+        .left img {
+            max-width: 80%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .left .bottom-logo {
+            margin-top: auto;
+        }
+        .center {
+            background-color: #f5f5f5;
+            width: 24%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+        }
+        .center-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            background-color: #bbbbbb; padding: 15px; font-size: 1.2em; font-weight: bold;
+        }
+        .center-header img {
+            height: 25px;
+        }
+        .menu-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #bbbbbb;
+            border-radius: 5px;
+        }
+        .center-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .right {
+            background-color: #ffffff;
+            width: 38%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        
+        /* スマホ用スタイル */
+        @media screen and (max-width: 768px) {
+            .left, .right {
+                display: none;
+            }
+            .center {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="bp_logo.png" alt="BP Logo">
+        <div class="bottom-logo">
+            <img src="cleeep_logo.png" alt="Cleeep Logo">
+        </div>
+    </div>
+    <div class="center">
+        <div class="center-header">
+            <img src="bp_logo.png" alt="BP Logo">
+            <div class="menu-icon">☰</div>
+        </div>
+        <div class="center-content">
+            <img src="cleeep_logo.png" alt="Cleeep Logo" style="max-width: 80%; height: auto; margin-bottom: 20px;">
+            <fieldset style="border: 2px solid #000; padding: 10px; width: 80%; text-align: center;">
+                <legend>製品検索</legend>
+                <input type="text" placeholder="検索..." style="width: 70%; padding: 5px;">
+                <button style="padding: 5px 10px;">検索</button>
+            </fieldset>
+        </div>
+    </div>
+    <div class="right"></div>
+</body>
+</html>
